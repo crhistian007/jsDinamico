@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const saldo =1000;
+    let usuario=prompt("Ingrese el nombre de su usuario");
+    let operacion=2;
+    while (operacion==2){
+        let movimiento=Number(prompt("Opciones : \nA.-Ingrese 1 si desea depositar en su cuenta\nB.-Ingrese 2 si desea retirar de su cuenta\nC.-Ingrese 3 si desea verificar su cuenta actual"))
+        if (movimiento==1){
+            let aumentar=Number(prompt("Ingrese la cantidad de cuanto desea depositar"))
+            let final =saldo + aumentar;
+            alert(`${usuario} tu saldo final es ${final} soles`)
+
+        } else if(movimiento==2){
+            let disminuir=Number(prompt("Ingrese la cantidad de cuanto desea retirar"))
+            let final=saldo-disminuir;
+            if (final<0){
+                alert("Saldo insuficiente")    
+            }else{
+                alert(`${usuario} tu saldo final es de ${final}`)
+            }
+        }else{
+            alert(`${usuario} tu saldo actual es ${saldo}`)
+        }
+        operacion=Number(prompt("Ingrese 1 si ya no desea realizar otra operacion\nIngrese 2 si desea realizar otra\n (El programa no esta incluyendo actualizacion en el saldo)"))
+    }
+    </script>
+</body>
+</html>
